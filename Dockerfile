@@ -24,4 +24,4 @@ USER medical_user
 EXPOSE 8000
 
 # Команда запуска
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
+CMD ["gunicorn", "project_config.wsgi:application", "--bind", "127.0.0.1:8000", "--workers", "3"]
