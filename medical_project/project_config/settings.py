@@ -6,15 +6,22 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'your-secret-key-here')
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+DEBUG = os.environ.get('DEBUG', 'False')
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 # Настройки базы данных
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgres://medical_user:medical_password@localhost:5432/medical_db',
+#     )
+# }
+
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://medical_user:medical_password@localhost:5432/medical_db',
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Остальные настройки остаются такими же...
