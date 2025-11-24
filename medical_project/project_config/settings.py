@@ -1,11 +1,10 @@
 import os
 from datetime import timedelta
 from pathlib import Path
-import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'your-secret-key-here')
+SECRET_KEY = os.environ.get('SECRET_KEY', '1m3a3bebnm7y96tlbk02')
 DEBUG = os.environ.get('DEBUG', 'False')
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
